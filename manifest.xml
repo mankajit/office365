@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>6e1c6b8f-9e0d-41b4-8c7b-2d2e45c0d0ab</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>mankajit</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="AD → BS Converter (Self-contained)"/>
+  <Description DefaultValue="Convert AD (Gregorian) to Bikram Sambat in Excel: task pane + custom functions."/>
+  <IconUrl DefaultValue="https://mankajit.github.io/office365/assets/icon-32.png"/>
+  <SupportUrl DefaultValue="https://mankajit.github.io/office365/support.html"/>
+
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://mankajit.github.io/office365/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <ov:VersionOverrides Version="1.1">
+    <ov:Hosts>
+      <ov:Host xsi:type="Workbook">
+        <ov:AllFormFactors>
+          <ov:ExtensionPoint xsi:type="CustomFunctions">
+            <ov:Script>
+              <ov:SourceLocation resid="Functions.Script.Url"/>
+            </ov:Script>
+            <ov:Page>
+              <ov:SourceLocation resid="Functions.Help.Url"/>
+            </ov:Page>
+            <ov:Metadata>
+              <ov:Url resid="Functions.Metadata.Url"/>
+            </ov:Metadata>
+            <ov:Namespace resid="Functions.Namespace"/>
+          </ov:ExtensionPoint>
+          <ov:ExtensionPoint xsi:type="Taskpane">
+            <ov:SourceLocation resid="Taskpane.Url" />
+            <ov:Title resid="Taskpane.Title" />
+          </ov:ExtensionPoint>
+        </ov:AllFormFactors>
+      </ov:Host>
+    </ov:Hosts>
+
+    <ov:Resources>
+      <ov:Urls>
+        <ov:Url id="Taskpane.Url" DefaultValue="https://mankajit.github.io/office365/taskpane.html"/>
+        <ov:Url id="Functions.Script.Url" DefaultValue="https://mankajit.github.io/office365/functions/functions.js"/>
+        <ov:Url id="Functions.Help.Url" DefaultValue="https://mankajit.github.io/office365/functions/help.html"/>
+        <ov:Url id="Functions.Metadata.Url" DefaultValue="https://mankajit.github.io/office365/functions/functions.json"/>
+      </ov:Urls>
+      <ov:ShortStrings>
+        <ov:String id="Taskpane.Title" DefaultValue="AD → BS Converter"/>
+        <ov:String id="Functions.Namespace" DefaultValue="ADBS"/>
+      </ov:ShortStrings>
+    </ov:Resources>
+  </ov:VersionOverrides>
+</OfficeApp>
