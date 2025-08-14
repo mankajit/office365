@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AD → BS Converter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>AD → Bikram Sambat</h1>
+    <p>Pick a Gregorian date (AD) and convert it to Bikram Sambat (BS).</p>
+
+    <label for="adDate">AD date:</label>
+    <input id="adDate" type="date" />
+
+    <div class="buttons">
+      <button id="convertBtn">Convert</button>
+      <button id="insertBtn">Insert into selected cell</button>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <hr />
+    <h3>Bulk convert selection</h3>
+    <p>Select cells with AD dates in Excel, then click "Convert Selected".</p>
+    <button id="convertRangeBtn">Convert Selected</button>
+    <div id="rangeResult"></div>
+  </div>
+
+  <script src="converter.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>
