@@ -1,0 +1,75 @@
+{
+  "namespace": "ADBS",
+  "allowCustomDataForDataTypeAny": true,
+  "functions": [
+    {
+      "name": "ADTOBS",
+      "description": "Convert AD date to BS (YYYY-MM-DD). Accepts Excel date cell or (year,month,day).",
+      "parameters": [
+        {
+          "name": "dateOrYear",
+          "type": "any",
+          "description": "Excel date or Year"
+        },
+        {
+          "name": "month",
+          "type": "number",
+          "description": "Month (1-12, optional)",
+          "optional": true
+        },
+        {
+          "name": "day",
+          "type": "number",
+          "description": "Day (1-31, optional)",
+          "optional": true
+        }
+      ],
+      "result": {
+        "type": "string",
+        "dimensionality": "scalar"
+      }
+    },
+    {
+      "name": "ADTOBS_LONG",
+      "description": "Convert AD date to BS (long format).",
+      "parameters": [
+        {
+          "name": "dateOrYear",
+          "type": "any",
+          "description": "Excel date or Year"
+        },
+        {
+          "name": "month",
+          "type": "number",
+          "description": "Month (1-12, optional)",
+          "optional": true
+        },
+        {
+          "name": "day",
+          "type": "number",
+          "description": "Day (1-31, optional)",
+          "optional": true
+        }
+      ],
+      "result": {
+        "type": "string",
+        "dimensionality": "scalar"
+      }
+    },
+    {
+      "name": "BSTOAD",
+      "description": "Convert a BS text date (YYYY-MM-DD) to AD (Excel serial).",
+      "parameters": [
+        {
+          "name": "bsText",
+          "type": "string",
+          "description": "BS date text, e.g., 2081-05-15"
+        }
+      ],
+      "result": {
+        "type": "number",
+        "dimensionality": "scalar"
+      }
+    }
+  ]
+}

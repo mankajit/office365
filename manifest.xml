@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>9c8df2d7-3f6d-4c3a-9b8b-0f88b9e0a1a2</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>mankajit</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="AD → BS (Custom Functions)"/>
+  <Description DefaultValue="Excel custom functions for accurate AD (Gregorian) ↔ BS (Bikram Sambat) conversion."/>
+  <IconUrl DefaultValue="https://mankajit.github.io/office365/assets/icon-32.png"/>
+  <SupportUrl DefaultValue="https://mankajit.github.io/office365/support.html"/>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <!-- Not used by CF-only add-ins; must point somewhere valid -->
+    <SourceLocation DefaultValue="https://mankajit.github.io/office365/cf/help.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <ov:VersionOverrides Version="1.1">
+    <ov:Hosts>
+      <ov:Host xsi:type="Workbook">
+        <ov:AllFormFactors>
+          <ov:ExtensionPoint xsi:type="CustomFunctions">
+            <ov:Script>
+              <ov:SourceLocation resid="Functions.Script.Url"/>
+            </ov:Script>
+            <ov:Page>
+              <ov:SourceLocation resid="Functions.Help.Url"/>
+            </ov:Page>
+            <ov:Metadata>
+              <ov:Url resid="Functions.Metadata.Url"/>
+            </ov:Metadata>
+            <ov:Namespace resid="Functions.Namespace"/>
+          </ov:ExtensionPoint>
+        </ov:AllFormFactors>
+      </ov:Host>
+    </ov:Hosts>
+
+    <ov:Resources>
+      <ov:Urls>
+        <ov:Url id="Functions.Script.Url" DefaultValue="https://mankajit.github.io/office365/cf/functions.js"/>
+        <ov:Url id="Functions.Help.Url" DefaultValue="https://mankajit.github.io/office365/cf/help.html"/>
+        <ov:Url id="Functions.Metadata.Url" DefaultValue="https://mankajit.github.io/office365/cf/functions.json"/>
+      </ov:Urls>
+      <ov:ShortStrings>
+        <ov:String id="Functions.Namespace" DefaultValue="ADBS"/>
+      </ov:ShortStrings>
+    </ov:Resources>
+  </ov:VersionOverrides>
+</OfficeApp>
